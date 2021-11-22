@@ -1,4 +1,3 @@
-
 operacja = input("Podaj operację jaką chcesz wykonać: + dodawanie, - odejmowanie, * mnożenie, / dzielenie: ")
 
 x = int(input("Podaj pierwszą liczbę: "))
@@ -14,5 +13,5 @@ elif operacja == "*":
 elif operacja == "/":
     wynik = x/y
 else:
-    wynik = "nie ma takiego działania"
+    wynik = "nie poprawne działanie"
 print(wynik)
