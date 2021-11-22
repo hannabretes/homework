@@ -2,7 +2,25 @@
 # lista.sort()
 # print(lista)
 
-lista = [9,2,5]
-for i in lista:
-    lista.sort()
-print(lista)
+# lista = [9,2,5]
+# for i in lista:
+#    lista.sort()
+# print(lista)
+
+x = int(input("Wpisz wartość pierwszą:  "))
+y = int(input("Wpisz wartość drugą: "))
+z = int(input("Wpisz wartość trzecią: "))
+
+if x > y:
+    max = x
+    x = y
+    y = max
+if x > z:
+    max = x
+    x = z
+    z = max
+if y > z:
+    max = y
+    y = z
+    z = max
+print(x, y, z)
