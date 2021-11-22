@@ -13,5 +13,5 @@ elif operacja == "*":
 elif operacja == "/":
     wynik = x/y
 else:
-    wynik = "nie poprawne działanie"
+    wynik = "niepoprawne działanie"
 print(wynik)
