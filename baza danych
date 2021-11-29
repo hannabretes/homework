@@ -7,9 +7,9 @@ Program powinien pozwolić na:
 Program powinien działać do momentu wprowadzenia komendy końca
 """
 
-komenda = 'start'
+komenda = "start"
 bazaDanych = {}
-while komenda != 'koniec':
+while komenda != "koniec'":
     x = int(input(" [1] Wczytaj dane: \n [2] Wypisz dane: \n [3] Wyszukaj dane: \n [4] Koniec: \n"))
     print(x)
     if x == 1:
@@ -21,7 +21,7 @@ while komenda != 'koniec':
         daneOsoby["nazwisko"] = nazwisko
         wiek = input("Podaj wiek: ")
         daneOsoby["wiek"] = wiek
-        komenda = 'dalej'
+        komenda = "dalej"
         bazaDanych[indeks] = daneOsoby
     elif x == 2:
         print(bazaDanych)
@@ -34,7 +34,6 @@ while komenda != 'koniec':
                 for k in j:
                     if k == "imie" and j[k] == szukana:
                         print(j)
-
         elif klucz == 2:
             for i,j in bazaDanych.items():
                 for k in j:
@@ -47,8 +46,9 @@ while komenda != 'koniec':
                         print(j)
         else:
             print("Błędna wartość!")
-        komenda = 'dalej'
+            komenda = "dalej"
     elif x == 4:
-        komenda = 'koniec'
+        break
+        # komenda = "koniec"
     else:
         print("Błędna wartość!")
