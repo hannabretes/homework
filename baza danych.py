@@ -14,7 +14,7 @@ while komenda != "koniec'":
     print(x)
     if x == 1:
         daneOsoby = {}
-        indeks = input("Podaj indeks - musi byc unikatowy")
+        indeks = input("Podaj indeks - musi byc unikatowy: ")
         imie = input("Podaj imię: ")
         daneOsoby["imię"] = imie
         nazwisko = input("Podaj nazwisko: ")
@@ -30,17 +30,17 @@ while komenda != "koniec'":
         klucz = int(input("Po jakim kluczu chcesz wyszukać? \n [1] imię: \n [2] nazwisko: \n [3] wiek: \n"))
         szukana = input("Wpisz wartość do wyszukania: ")
         if klucz == 1:
-            for i,j in bazaDanych.items():
+            for i, j in bazaDanych.items():
                 for k in j:
                     if k == "imie" and j[k] == szukana:
                         print(j)
         elif klucz == 2:
-            for i,j in bazaDanych.items():
+            for i, j in bazaDanych.items():
                 for k in j:
                     if k == "nazwisko" and j[k] == szukana:
                         print(j)
         elif klucz == 3:
-            for i,j in bazaDanych.items():
+            for i, j in bazaDanych.items():
                 for k in j:
                     if k == "wiek" and j[k] == szukana:
                         print(j)
