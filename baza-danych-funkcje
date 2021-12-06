@@ -1,0 +1,52 @@
+def wczytajDane():
+    daneOsoby = {}
+    indeks = input("Podaj indeks - musi byc unikatowy: ")
+    imie = input("Podaj imie: ")
+    daneOsoby["imie"] = imie
+    nazwisko = input("Podaj nazwisko: ")
+    daneOsoby["nazwisko"] = nazwisko
+    wiek = input("Podaj wiek: ")
+    daneOsoby["wiek"] = wiek
+    bazaDanych[indeks] = daneOsoby
+    return True
+
+def wyszukajDane(klucz,szukana):
+    if klucz == 1:
+        for i, j in bazaDanych.items():
+            for k in j:
+                if k == "imie" and j[k] == szukana:
+                    return j
+    elif klucz == 2:
+        for i, j in bazaDanych.items():
+            for k in j:
+                if k == "nazwisko" and j[k] == szukana:
+                    return j
+    elif klucz == 3:
+        for i, j in bazaDanych.items():
+            for k in j:
+                if k == "wiek" and j[k] == szukana:
+                    return j
+    else:
+        return str("Błędna wartość!")
+
+komenda = "start"
+bazaDanych = {}
+while komenda != "koniec":
+    x = int(input(" [1] Wczytaj dane: \n [2] Wypisz dane: \n [3] Wyszukaj dane: \n [4] Koniec: \n"))
+    print(x)
+    if x == 1:
+       wczytajDane()
+       komenda = "dalej"
+    elif x == 2:
+        print(bazaDanych)
+        komenda = 'dalej'
+    elif x == 3:
+        klucz = int(input("Po jakim kluczu chcesz wyszukać? \n [1] imie: \n [2] nazwisko: \n [3] wiek: \n"))
+        szukana = input("Wpisz wartość do wyszukania: ")
+        print(wyszukajDane(klucz,szukana))
+        komenda = "dalej"
+    elif x == 4:
+        #break
+        komenda = "koniec"
+    else:
+        print("Błędna wartość!")
