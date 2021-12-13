@@ -1,0 +1,29 @@
+#kwardsy(imie i nazwisko autora), parametr pozycyjny (tytuł książki)
+def wczytajDane():
+    tytul = input("Podaj tytuł książki: ")
+    imie = input("Podaj imie autora: ")
+    nazwisko = input("Podaj nazwisko autora: ")
+    rok =int(input("Podaj rok wydania: "))
+    dodajDoBazyDanych(tytul, rok, imie=imie, nazwisko=nazwisko)
+
+def dodajDoBazyDanych(tytulKsiazki, rok, **autor):
+    bazaDanych["tytul"] = tytulKsiazki
+    bazaDanych["autor"] = autor
+    bazaDanych["rok"] = rok
+
+komenda = "start"
+bazaDanych = {}
+while komenda != "koniec":
+    x = int(input(" [1] Wczytaj dane: \n [2] Wypisz dane: \n [3] Koniec: \n"))
+    print(x)
+    if x == 1:
+       wczytajDane()
+       komenda = "dalej"
+    elif x == 2:
+        print(bazaDanych)
+        komenda = 'dalej'
+    elif x == 3:
+        #break
+        komenda = "koniec"
+    else:
+        print("Błędna wartość!")
