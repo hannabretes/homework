@@ -1,0 +1,6 @@
+# argumenty domyślne
+def kwadrat(liczba=4):
+    print(liczba ** 2)
+
+
+kwadrat(6)
