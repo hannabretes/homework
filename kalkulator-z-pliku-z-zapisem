@@ -1,0 +1,35 @@
+"""
+Zmodyfikuj pierwszy program tak aby zapisywał resultaty do pliku
+np:
+calculations.txt:
++ 2 4
+- 10 3
+
+results/txt:
+6
+7
+
+"""
+plik = open("C:/Users/brete/Desktop/python/zadania/test2.txt", "r")
+linia = plik.readline()
+while linia:
+    lista = linia.split()
+    print(lista)
+    operacja = lista[0]
+    x = int(lista[1])
+    y = int(lista[2])
+    if operacja == "+":
+        wynik = x+y
+    elif operacja == "-":
+        wynik = x-y
+    elif operacja == "*":
+        wynik = x * y
+    elif operacja == "/":
+        wynik = x//y
+    else:
+        wynik = "niepoprawne działanie"
+    wyniki=open("C:/Users/brete/Desktop/python/zadania/wyniki.txt", "a")
+    wyniki.write(str(wynik))
+    wyniki.write("\n")
+    linia = plik.readline()
+plik.close()
