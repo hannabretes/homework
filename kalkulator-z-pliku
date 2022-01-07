@@ -1,0 +1,35 @@
+"""
+Napisz program który wczytuje z pliku dane w postaci:
+[operator] [parametr_a] [parametr_b]
+a następnie wykonuje zadane w operatorze działanie na parametrach.
+np:
+calculations.txt:
++ 2 4
+- 10 3
+
+output:
+6
+7
+"""
+
+plik = open("C:/Users/brete/Desktop/python/zadania/test2.txt", "r")
+linia = plik.readline()
+while linia:
+    lista = linia.split()
+    print(lista)
+    operacja = lista[0]
+    x = int(lista[1])
+    y = int(lista[2])
+    if operacja == "+":
+        wynik = x+y
+    elif operacja == "-":
+        wynik = x-y
+    elif operacja == "*":
+        wynik = x * y
+    elif operacja == "/":
+        wynik = x//y
+    else:
+        wynik = "niepoprawne działanie"
+    print(wynik)
+    linia = plik.readline()
+plik.close()
