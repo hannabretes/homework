@@ -1,0 +1,70 @@
+class BazaDanych:
+    def zapiszDoPliku(self, osoba):
+        plik = open("C:/Users/brete/Desktop/python/zadania/baza.txt", "a")
+        plik.write(str(osoba))
+        plik.write("\n")
+        plik.close()
+
+    def wczytajDane(self):
+        daneOsoby = {}
+        indeks = input("Podaj indeks - musi byc unikatowy: ")
+        imie = input("Podaj imie: ")
+        daneOsoby["imie"] = imie
+        nazwisko = input("Podaj nazwisko: ")
+        daneOsoby["nazwisko"] = nazwisko
+        wiek = input("Podaj wiek: ")
+        daneOsoby["wiek"] = wiek
+        bazaDanych[indeks] = daneOsoby
+        self.zapiszDoPliku(daneOsoby)
+
+    def wyszukajDane(self, klucz, szukana):
+        if klucz == 1:
+            for i, j in bazaDanych.items():
+                for k in j:
+                    if k == "imie" and j[k] == szukana:
+                        return j
+        elif klucz == 2:
+            for i, j in bazaDanych.items():
+                for k in j:
+                    if k == "nazwisko" and j[k] == szukana:
+                        return j
+        elif klucz == 3:
+            for i, j in bazaDanych.items():
+                for k in j:
+                    if k == "wiek" and j[k] == szukana:
+                        return j
+        else:
+            return str("Błędna wartość!")
+
+    def odczytajZpliku(self):
+        plik2 = open("C:/Users/brete/Desktop/python/zadania/baza.txt", "r")
+        linia = plik2.readline()
+        while linia:
+            print(linia)
+            linia = plik2.readline()
+        plik2.close()
+
+baza = BazaDanych()
+komenda = "start"
+bazaDanych = {}
+while komenda != "koniec":
+    x = int(input(" [1] Wczytaj dane: \n [2] Wypisz dane: \n [3] Wyszukaj dane: \n [4] Wydrukuj z pliku: \n [5] Koniec: \n"))
+    print(x)
+    if x == 1:
+        baza.wczytajDane()
+        komenda = "dalej"
+    elif x == 2:
+        print(bazaDanych)
+        komenda = 'dalej'
+    elif x == 3:
+        klucz = int(input("Po jakim kluczu chcesz wyszukać? \n [1] imie: \n [2] nazwisko: \n [3] wiek: \n"))
+        szukana = input("Wpisz wartość do wyszukania: ")
+        print(baza.wyszukajDane(klucz, szukana))
+        komenda = "dalej"
+    elif x == 4:
+        baza.odczytajZpliku()
+    elif x == 5:
+        # break
+        komenda = "koniec"
+    else:
+        print("Błędna wartość!")
