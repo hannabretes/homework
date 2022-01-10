@@ -1,0 +1,27 @@
+from math import gcd
+
+a = int(input("Wpisz mianownkik pierwszej liczby: "))
+b = int(input("Wpisz licznik pierwszej liczby: "))
+c = int(input("Wpisz mianownkik drugiej liczby: "))
+d = int(input("Wpisz licznik drugiej liczby: "))
+
+
+class Fractions:
+
+    def __init__(self, _num, _den):
+        divider = gcd(_num, _den)
+        self.num = _num // divider
+        self.den = _den // divider
+
+    def __str__(self):
+        return str(self.num) + "/" + str(self.den)
+
+    def __add__(self, other):
+        return Fractions(self.num * other.den + other.num * self.den, self.den * other.den)
+
+
+if __name__ == '__main__':
+    fr1 = Fractions(a, b)
+    fr2 = Fractions(c, d)
+    print(fr1, ",", fr2)
+    print(fr1 + fr2)
